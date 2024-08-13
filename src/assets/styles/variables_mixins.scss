@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Lemon&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Days+One&family=Nova+Mono&family=Rubik+Mono+One&display=swap');
+
+:root {
+    // <---FONTS--->
+    --IBM-PLEX-SANS: "IBM Plex Sans", sans-serif;
+    --MONTSERRAT: "Montserrat", sans-serif;
+    --LEMON: "Lemon", sans-serif;
+    --RUBIK-MONO-ONE: "Rubik Mono One", sans-serif;
+    --DAYS-ONE: "Days One", sans-serif;
+    --NOVA-MONO: "Nova Mono", sans-serif;
+}
+
+@mixin flexy($justify, $align, $direcetion, $wrap) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $direcetion;
+    flex-wrap: $wrap;
+};
+
+@mixin colors($color, $background) {
+    color: $color;
+    background: $background;
+};
+
+@mixin size($height, $width) {
+    height: $height;
+    width: $width;
+};
+
+@mixin font($size, $family) {
+    font-size: $size;
+    font-family: $family;
+};
+
+@mixin grid($rows, $columns, $area) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+    grid-area: $area;
+}
