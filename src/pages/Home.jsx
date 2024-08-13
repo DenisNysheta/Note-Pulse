@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { decrement, increment } from '../assets/scripts/features/counterSlice'
+import "../assets/styles/components/App.scss"
+import Form from '../components/Form'
 
 function Home() {
 
@@ -8,11 +9,9 @@ function Home() {
     const dispatch = useDispatch()
 
   return (
-    <>
-        <div>{count}</div>
-        <button onClick={() => dispatch(increment())}>Increment</button>
-        <button onClick={() => dispatch(decrement())}>Decrement</button>
-    </>
+    <div className='pulse'>
+        <Form />
+    </div>
   )
 }
 
