@@ -22,3 +22,11 @@ p {
     @include colors(white, linear-gradient(to right, #2c3e50, #3498db));
     @include flexy(center,center,column,wrap);
 }
+
+@keyframes greetings {
+    0% {
+        opacity: 0;
+    } 100% {
+        opacity: 1;
+    }
+}
