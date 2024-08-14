@@ -1,0 +1,44 @@
+@import "../../assets/styles/variables_mixins.scss";
+
+.infoForm[data-registration="SignIn"] {
+    --title: "Create your own comfort";
+    --describe: "Note Pulse - application that focuses on the content of your notes and mentioning them ata time convenient for you and your comfort."
+}
+
+.infoForm[data-registration="LogIn"] {
+    --title: "You're back !";
+    --describe: "An excellent opportunity to review your notes and reminders for your own comfort."
+}
+
+.infoForm {
+
+    transition: .3s ease;
+
+    &__title {
+        transition: .12s linear;
+    }
+
+    &__text {
+        border-radius: 20px;
+        border: 3px solid black;
+        background-color: #5b86e5;
+        gap: 30px;
+        
+        @extend %text_registration;
+        
+        @include size(inherit, 50%);
+        @include flexy(center,center,column,wrap);
+    }
+    
+    &__describe {
+        height: 145px;
+        transition: .12s linear;
+        max-width: 60%;
+    }
+
+}
+
+.letter_grettings {
+    transition: .3s linear;
+    opacity: 0;
+}
