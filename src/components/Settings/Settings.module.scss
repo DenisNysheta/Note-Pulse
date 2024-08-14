@@ -4,6 +4,7 @@
     transition: all .5s ease;
     border-radius: 0px 0px 20px 20px;
     position: absolute;
+    gap: 25px;
     background-color: #2c3e507d;
     top: 0px;
     &__btn {
@@ -17,6 +18,7 @@
         &::before {
             transition: all .5s ease;
             position: absolute;
+            cursor: pointer;
             content: "";
             top: -5px;
             display: block;
@@ -30,17 +32,72 @@
         @include flexy(center,center,row,no-wrap);
     }
 
-    &__btn_theme {
-        background-color: red;
-        @include size(20px,20px)
+    &__type {
+        cursor: pointer;
+        @extend %reset-settings-for-btn;
+        @extend %text_type-registration;
     }
 
-    @include size(60px,220px)
+    &__type_in {
+        gap: 15px;
+        position: relative;
+
+        &:before {
+            content: "";
+            transition: .35s ease-in;
+            display: block;
+            position: absolute;
+            border-radius: 20px;
+            background-color: rgb(29, 232, 246);
+            bottom: -10px;
+            left: 15px;
+
+            @include size(5px,35px);
+        }
+
+        @include flexy(center,center,row,no-wrap);
+    }
+
+    &__btn_theme {
+        transition: .3s ease-in;
+        background-color: rgb(41, 41, 92);
+        border: 3px solid darkcyan;
+        position: relative;
+        border-radius: 20px;
+
+        @include size(34px,65px)
+    }
+
+    &__btn_theme__theme {
+        cursor: pointer;
+        transition: .3s linear;
+        border: none;
+        position: absolute;
+        border-radius: inherit;
+        background-color: rgb(95, 104, 117);
+        display: block;
+        @include size(28px, 30px);
+    }
+
+    @include flexy(center,center,row,no-wrap);
+    @include size(60px,350px)
 }
 
 .open_settings {
     &:before {
         transform: rotate(45deg);
         top: 5px;
+    }
+}
+
+.active_signIn {
+    &::before {
+        left: 15px;
+    }
+}
+
+.active_logIn {
+    &::before {
+        left: 90px;
     }
 }
