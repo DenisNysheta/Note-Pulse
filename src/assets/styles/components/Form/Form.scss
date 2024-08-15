@@ -1,13 +1,19 @@
 @import "../../../styles/variables_mixins.scss";
-@import "./Letters.scss";
+@import "../../Letters.scss";
 
 .form {
-    transition: .5s linear;
+    transition: all .5s linear;
     box-shadow: 0 0 20px 10px white;
     border-radius: 20px;
     position: relative;
 
     animation: boxShadowForm 6s linear infinite alternate;
+
+    &__warning {
+        transition: .1s linear;
+        max-width: 355px;
+        text-align: center;
+    }
 
     @keyframes boxShadowForm {
         20% {
@@ -23,7 +29,7 @@
         }
     }
 
-    @include size(700px, 75%);
+    @include size(700px, 1440px);
     @include colors(white, linear-gradient(to right, #36d1dc, #5b86e5));
     @include flexy(center,center,column,wrap);
 }
@@ -42,6 +48,10 @@
         gap: 30px;
 
         @extend %text_registration;
+    }
+
+    &__fields {
+        gap: 30px;
     }
 
     &__describe {
