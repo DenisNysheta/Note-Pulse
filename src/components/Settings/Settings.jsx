@@ -17,7 +17,7 @@ function Settings() {
         <button onClick={() => {dispatch(setRegistration())}} className={cl.settings__type}>Sign In</button>
         <button onClick={() => {dispatch(setRegistration())}} className={cl.settings__type}>Log In</button>
       </div>
-      <div style={{backgroundColor: isChangeTheme ? "lightblue" : "darkblue"}} className={cl.settings__btn_theme}>
+      <div style={{backgroundColor: isChangeTheme ? "lightblue" : "black"}} className={cl.settings__btn_theme}>
           <button onClick={() => {
             isChangeTheme ? document.body.setAttribute("data-theme", "dark") : document.body.setAttribute("data-theme", "light") 
             setChangeTheme(!isChangeTheme)
