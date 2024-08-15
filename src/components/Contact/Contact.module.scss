@@ -1,0 +1,35 @@
+@import "../../assets/styles/variables_mixins.scss";
+
+.list {
+    gap: 15px;
+
+    &__item {
+        cursor: pointer;
+        transition: .2s linear;
+        padding: 10px;
+        border-radius: 50%;
+        border: 1px solid black;
+
+        & > a > img {
+            display: block;
+            @include size(30px,30px)
+        }
+
+        &:hover {
+            background-color: aquamarine
+        }
+
+    }
+
+    @include flexy(center,center,row,no-wrap);
+}
+
+.infoForm__describe {
+    transition: .12s linear;
+    max-width: 60%;
+}
+
+.letter_grettings {
+    transition: .3s linear;
+    opacity: 0;
+}
