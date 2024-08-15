@@ -1,0 +1,32 @@
+@import "../../../assets/styles/variables_mixins.scss";
+@import "../../InputsRegistration/InputsRegistration.module.scss";
+
+.name {
+
+    &::placeholder {
+        color: transparent
+    }
+
+    @extend %input-sing-in;
+    @include size(auto, 250px);
+}
+
+.email {
+
+    &::placeholder {
+        color: transparent
+    }
+
+    @extend %input-sing-in;
+    @include size(auto, 250px);
+}
+
+.password {
+
+    &::placeholder {
+        color: transparent
+    }
+
+    @extend %input-sing-in;
+    @include size(auto, 250px);
+}
