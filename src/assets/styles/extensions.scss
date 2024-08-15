@@ -17,3 +17,15 @@
     color: white;
     background-color: transparent;
 }
+
+%input-sing-in {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--LEMON);
+    color: white;
+    padding: 15px;
+    position: relative;
+    z-index: 1;
+    border-radius: 25px;
+}
