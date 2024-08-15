@@ -1,0 +1,77 @@
+@import "../../../assets/styles/variables_mixins.scss";
+
+.create_account {
+    border: none;
+    padding: 15px;
+    color: transparent;
+    transition: .3s ease;
+    font-size: 20px;
+    font-family: var(--LEMON);
+    border-radius: 20px;
+    background-color: white;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+        color: black;
+        transition: .3s ease-out;
+        content: "Create Account";
+        display: block;
+        position: absolute;
+        top: 0;
+        @include size(22px,200px);
+    }
+
+    &:active {
+        transition: .1s linear;
+        box-shadow: 0 0 20px 0 black inset;
+    }
+
+    &:hover {
+        width: 220px;
+    }
+
+    &:hover::before  {
+        top: 15px;
+    }
+
+    @include size(60px,60px)
+}
+
+.log_in {
+    border: none;
+    padding: 15px;
+    color: transparent;
+    transition: .3s ease;
+    font-size: 20px;
+    font-family: var(--LEMON);
+    border-radius: 20px;
+    background-color: white;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+        color: black;
+        transition: .3s ease-out;
+        content: "Log In";
+        display: block;
+        position: absolute;
+        top: 0;
+        @include size(22px,200px);
+    }
+
+    &:active {
+        transition: .1s linear;
+        box-shadow: 0 0 20px 0 black inset;
+    }
+
+    &:hover {
+        width: 220px;
+    }
+
+    &:hover::before  {
+        top: 15px;
+    }
+
+    @include size(60px,60px)
+}
