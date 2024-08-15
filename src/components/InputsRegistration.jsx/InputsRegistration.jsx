@@ -1,7 +1,7 @@
 import React from 'react'
 import cl from "./InputsRegistration.module.scss"
 
-function InpustRegistration() {
+function InputsRegistration() {
   return (
     <form className={cl.inputs} method='get'>
         <input  type="text" placeholder='Email' />
@@ -10,4 +10,4 @@ function InpustRegistration() {
   )
 }
 
-export default InpustRegistration
+export default InputsRegistration

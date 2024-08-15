@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import "../assets/styles/components/Form/Form.scss"
 import InfoForm from './InfoForm.jsx/InfoForm'
 import animateLetters from '../assets/scripts/animateLetters'
+import InpustRegistration from './InputsRegistration.jsx/InputsRegistration'
 
 function Form() {
 
@@ -28,10 +29,7 @@ function Form() {
           <div className='form__info'>
               <InfoForm />
               <div className='form__info__fields'>
-                  <form className='form__info__form' method='get'>
-                    <input  type="text" placeholder='Email' />
-                    <input  type="text" placeholder='Password'/>
-                  </form>
+                <InpustRegistration />
               </div>
           </div>
       </div>
