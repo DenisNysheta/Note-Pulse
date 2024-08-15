@@ -1,0 +1,43 @@
+@import "../../assets/styles/variables_mixins.scss";
+
+.inputs__item[data-blur="true"] {
+    --blur: blur(8px);
+    --name-top: 15px;
+}
+
+.inputs__item[data-blur="false"] {
+    --blur: blur(1px);
+    --name-top: -20px;
+}
+
+.inputs {
+    gap: 25px;
+
+    &__name {
+        transition: .1s ease;
+        position: absolute;
+        width: 110%;
+        font-weight: 900;
+        font-size: 15.4px;
+        top: var(--name-top);
+        left: 10px;
+    }
+
+    &__item {
+        cursor: pointer;
+        position: relative;
+        height: 50.5px;
+    }
+
+    @include flexy(center,center,column,no-wrap);
+}
+
+.blur_background {
+    transition: .25s linear;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.578);
+    top: 0;
+    border-radius: 20px;
+    filter: var(--blur);
+    @include size(inherit,100%)
+}
