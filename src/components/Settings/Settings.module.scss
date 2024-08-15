@@ -76,6 +76,7 @@
         border-radius: inherit;
         background-color: rgb(95, 104, 117);
         display: block;
+        box-shadow: 0 0 20px 5px var(--shadow-btn-theme);
         @include size(28px, 30px);
     }
 
