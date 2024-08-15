@@ -12,6 +12,14 @@
     --NOVA-MONO: "Nova Mono", sans-serif;
 }
 
+body[data-theme="dark"] {
+    --shadow-btn-theme: #004fff
+}
+
+body[data-theme="light"] {
+    --shadow-btn-theme: lightblue
+}
+
 @mixin flexy($justify, $align, $direcetion, $wrap) {
     display: flex;
     justify-content: $justify;

@@ -7,6 +7,14 @@
 - Between Night and Day (dark blue) - background: linear-gradient(to right, #2c3e50, #3498db);
 */
 
+body[data-theme="dark"] {
+    --shadow-btn-theme: red
+}
+
+body[data-theme="light"] {
+    --shadow-btn-theme: blue
+}
+
 h1,h2,h3,h4,h5,h6 {
     font-family: var(--DAYS-ONE);
 }
