@@ -7,12 +7,20 @@
 - Between Night and Day (dark blue) - background: linear-gradient(to right, #2c3e50, #3498db);
 */
 
+* {
+    transition: width 0.5s ease;
+}
+
+input {
+    cursor: pointer;
+}
+
 body[data-theme="dark"] {
-    --shadow-btn-theme: red
+    --shadow-btn-theme: yellow
 }
 
 body[data-theme="light"] {
-    --shadow-btn-theme: blue
+    --shadow-btn-theme: red
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -26,6 +34,10 @@ p {
 .pulse {
     position: relative;
 
+    &__box {
+        @include flexy(center,center,column,no-wrap);
+    }
+
     @include size(100vh,100%);
     @include colors(white, linear-gradient(to right, #2c3e50, #3498db));
     @include flexy(center,center,column,wrap);
@@ -34,7 +46,7 @@ p {
 @keyframes greetings {
     0% {
         opacity: 0;
-    } 100% {
+    }  100% {
         opacity: 1;
     }
 }
