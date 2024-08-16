@@ -18,7 +18,13 @@ function MyButton(props) {
     case "logIn":
       text = "Log In"  
       btnClass = text.split(" ").join("_").toLowerCase()
-      console.log(btnClass)
+      return (
+        <button className={cl[btnClass]} {...props}>{text}</button>
+      )
+    ;
+    case "generate Key":
+      text = "Generate Key"  
+      btnClass = text.split(" ").join("_").toLowerCase()
       return (
         <button className={cl[btnClass]} {...props}>{text}</button>
       )

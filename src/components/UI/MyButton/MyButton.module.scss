@@ -75,3 +75,41 @@
 
     @include size(60px,60px)
 }
+
+.generate_key {
+    border: none;
+    padding: 15px;
+    color: transparent;
+    transition: .3s ease;
+    font-size: 20px;
+    font-family: var(--LEMON);
+    border-radius: 20px;
+    background-color: white;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+        color: black;
+        transition: .3s ease-out;
+        content: "Generate Key";
+        display: block;
+        position: absolute;
+        top: 0;
+        @include size(22px,200px);
+    }
+
+    &:active {
+        transition: .1s linear;
+        box-shadow: 0 0 20px 0 black inset;
+    }
+
+    &:hover {
+        width: 220px;
+    }
+
+    &:hover::before  {
+        top: 15px;
+    }
+
+    @include size(60px,60px)
+}
