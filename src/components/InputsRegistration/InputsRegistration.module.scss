@@ -23,6 +23,21 @@
         left: 10px;
     }
 
+    &__invalidate {
+        transition: .2s linear;
+        opacity: 0;
+        font-weight: 900;
+        color: red;
+        left: -190px;
+        position: absolute;
+        width: 180px;
+    }
+
+    &__listBtns {
+        gap: 15px;
+        @include flexy(center,center,column,no-wrap);
+    }
+
     &__item {
         cursor: pointer;
         position: relative;
