@@ -2,26 +2,27 @@
 
 .list {
     gap: 15px;
-
+    @include flexy(center,center,row,no-wrap);
+    
     &__item {
         cursor: pointer;
         transition: .2s linear;
         padding: 10px;
         border-radius: 50%;
         border: 1px solid black;
+        
+        &:hover {
+            background-color: aquamarine
+        }
 
         & > a > img {
             display: block;
             @include size(30px,30px)
         }
-
-        &:hover {
-            background-color: aquamarine
-        }
-
+        
+        
     }
-
-    @include flexy(center,center,row,no-wrap);
+    
 }
 
 .infoForm__describe {
