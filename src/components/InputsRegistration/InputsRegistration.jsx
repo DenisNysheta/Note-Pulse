@@ -75,12 +75,7 @@ function InputsRegistration({registration}) {
     },1000)
   },[registration])
 
-  let phrase = `Be sure that your data indicated 
-  above will not be used for personal gain, 
-  since the project was created for
-  the purpose of practice.`
-
-  let listLetters = animateLetters(phrase,"letter-warning", "warning", "infinite","3s")
+  
 
   return (
     <form autoComplete="on" onSubmit={(e) => e.preventDefault()} className={cl.inputs} method='get'>
