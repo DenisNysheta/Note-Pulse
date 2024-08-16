@@ -4,12 +4,6 @@ import Settings from '../components/Settings/Settings'
 
 function Welcome() {
 
-  const mapObj = new Map()
-  let ivan = {name: "Ivan"}
-  mapObj.set(ivan, "dsadsadas")
-
-  console.log(mapObj.get(ivan))
-
   let listLetters = []
   for(let i = 0; i < 21; i++) {
     let x = <span key={Date.now() + i + 5} className='letter-title'></span>
