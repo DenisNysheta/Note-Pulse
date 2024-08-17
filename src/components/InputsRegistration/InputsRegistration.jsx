@@ -69,14 +69,14 @@ function InputsRegistration({registration}) {
   ]
   
   let infoLogInInputs = [
-    { 
+    { elementNotValidate: <p className={cl.inputs__invalidate}>The email is not correct, please check</p>,
       regExp: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
       type: "email",
       value: logInInfo.email,
       placeHolder: "Your Email",
       stateValue: "email"
     },
-    { 
+    { elementNotValidate: <p className={cl.inputs__invalidate}>{`The password not correct(5-15 symbols)`}</p>,
       regExp: /^[a-zA-Z0-9!@#$%^&*]{5,15}$/,
       type: "password",
       value: logInInfo.password,
@@ -97,7 +97,7 @@ function InputsRegistration({registration}) {
     return key
   }
   
-  function validate(regExp, value, elementWarning,...args) {
+  function validate(regExp, value, elementWarning) {
     if(typeof regExp === "object") {
       if(regExp.test(value)) {
         setTimeout(() => {
@@ -159,9 +159,13 @@ function InputsRegistration({registration}) {
             }) : infoLogInInputs.map((logIn, index) => {
               return (
                 <div key={index} data-blur="true" className={cl.inputs__item}>
+                  {logIn.elementNotValidate}
                   <MyInput
                     value={logIn.value}
-                    onChange={(e) => setLogInInfo({...logInInfo, [logIn.stateValue]: e.target.value})}
+                    onChange={(e) => {
+                      setLogInInfo({...logInInfo, [logIn.stateValue]: e.target.value})
+                      validate(logIn.regExp,logIn.value,e.currentTarget.parentElement.firstElementChild)
+                    }}
                     onFocus={(e) => changeBlur(e, "false")}
                     onBlur={(e) => logInInfo[logIn.stateValue] ? changeBlur(e, "false") : changeBlur(e,"true")} 
                     type={logIn.type.includes("Repeat") ? "password" : logIn.type}
