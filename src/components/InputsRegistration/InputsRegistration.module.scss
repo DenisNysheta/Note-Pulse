@@ -14,13 +14,22 @@
     gap: 25px;
 
     &__name {
+        transition: .5s ease-out;
         transition: .1s ease;
         position: absolute;
+        color: var( --color-input-placeholder);
         width: 110%;
         font-weight: 900;
         font-size: 15.4px;
         top: var(--name-top);
         left: 10px;
+    }
+
+    &__infoBtn {
+        transition: .5s ease;
+        color:  var(--warning-btn);
+        font-weight: 900;
+        max-width: 350px;
     }
 
     &__invalidate {
