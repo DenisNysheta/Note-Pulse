@@ -8,7 +8,7 @@
 */
 
 * {
-    transition: width 0.5s ease;
+    transition: 0.5s ease;
 }
 
 input {
@@ -39,7 +39,7 @@ p {
     }
 
     @include size(100vh,100%);
-    @include colors(white, linear-gradient(to right, #2c3e50, #3498db));
+    @include colors(white, var(--back-for-app));
     @include flexy(center,center,column,wrap);
 }
 
