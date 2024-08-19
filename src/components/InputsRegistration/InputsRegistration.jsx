@@ -23,8 +23,6 @@ function InputsRegistration({registration}) {
     repeatPassword: ""
   })
   
-  let { name, email, password, repeatPassword } = singInInfo
-  
   const [logInInfo, setLogInInfo] = useState({
     email: "",
     password: ""
@@ -105,11 +103,15 @@ function InputsRegistration({registration}) {
         },500)
       } else {
         elementWarning.style.opacity = 1
+        setTimeout(() => {
+          elementWarning.style.opacity = 0
+        },5000)
       }
     }
   }
 
   let conditionForSendSingIn = infoSingInInputs[0].regExp.test(singInInfo.name) && infoSingInInputs[1].regExp.test(singInInfo.email) && infoSingInInputs[2].regExp.test(singInInfo.password) && infoSingInInputs[2].value === singInInfo.repeatPassword
+  let conditionForLogIn = infoLogInInputs[0].regExp.test(logInInfo.email) && infoLogInInputs[1].regExp.test(logInInfo.password)
 
   useEffect(() => {
     setPrivateKey(createPrivateKey())
@@ -125,6 +127,7 @@ function InputsRegistration({registration}) {
         repeatPassword: ""
       })
     }} className={cl.inputs} method='get'>
+          <p className={cl.inputs__infoBtn}>Don't worry about the button as it will appear when all the fields are specified according to the rules</p>
           { 
             registration ? infoSingInInputs.map((singIn, index) => {
                 let x = <div key={index} data-blur="true" className={cl.inputs__item}>
@@ -179,7 +182,10 @@ function InputsRegistration({registration}) {
           }
           <textarea value={privateKey} style={{display: "none"}} name="private_key" id=""></textarea>
         <div className={cl.inputs__listBtns}>
-          <MyButton style={{zIndex: conditionForSendSingIn ? "1" : "-1",opacity: conditionForSendSingIn ? 1 : 0}} typeBtn={registration ? "singIn" : "logIn"} type="submit" />
+          {registration ? 
+            <MyButton style={{zIndex: conditionForSendSingIn ? "1" : "-1",opacity: conditionForSendSingIn ? 1 : 0}} typeBtn="singIn" type="submit" /> :
+            <MyButton style={{zIndex: conditionForLogIn ? "1" : "-1",opacity: conditionForLogIn ? 1 : 0}} typeBtn="logIn" type="submit" />
+          }
           <MyButton type="button" onClick={() => {
             setPrivateKey(createPrivateKey())
             alert("Your private key was generated, and will be send when you will create account ^_^")
