@@ -2,7 +2,6 @@
 @import "../../Letters.scss";
 
 .form {
-    transition: all .5s linear;
     box-shadow: 0 0 20px 10px white;
     border-radius: 20px;
     position: relative;
@@ -30,7 +29,7 @@
     }
 
     @include size(700px, 1440px);
-    @include colors(white, linear-gradient(to right, #36d1dc, #5b86e5));
+    @include colors(white, var(--back-field-form));
     @include flexy(center,center,column,wrap);
 }
 
@@ -51,6 +50,7 @@
     }
 
     &__fields {
+        transition: .5s ease;
         gap: 30px;
     }
 
