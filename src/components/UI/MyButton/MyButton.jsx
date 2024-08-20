@@ -5,9 +5,9 @@ import cl from "./MyButton.module.scss"
 function MyButton(props) {
 
   let text, btnClass;
-  const { typeBtn } = props
+  const { typebtn } = props
   
-  switch(typeBtn) {
+  switch(typebtn) {
     case "singIn":
       text = "Create account"  
       btnClass = text.split(" ").join("_").toLowerCase()
