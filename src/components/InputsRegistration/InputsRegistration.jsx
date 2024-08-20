@@ -183,13 +183,13 @@ function InputsRegistration({registration}) {
           <textarea value={privateKey} style={{display: "none"}} name="private_key" id=""></textarea>
         <div className={cl.inputs__listBtns}>
           {registration ? 
-            <MyButton style={{zIndex: conditionForSendSingIn ? "1" : "-1",opacity: conditionForSendSingIn ? 1 : 0}} typeBtn="singIn" type="submit" /> :
-            <MyButton style={{zIndex: conditionForLogIn ? "1" : "-1",opacity: conditionForLogIn ? 1 : 0}} typeBtn="logIn" type="submit" />
+            <MyButton style={{zIndex: conditionForSendSingIn ? "1" : "-1",opacity: conditionForSendSingIn ? 1 : 0}} typebtn="singIn" type="submit" /> :
+            <MyButton style={{zIndex: conditionForLogIn ? "1" : "-1",opacity: conditionForLogIn ? 1 : 0}} typebtn="logIn" type="submit" />
           }
           <MyButton type="button" onClick={() => {
             setPrivateKey(createPrivateKey())
             alert("Your private key was generated, and will be send when you will create account ^_^")
-          }} typeBtn={registration ? "generate Key" : "hidden"}/>
+          }} typebtn={registration ? "generate Key" : "hidden"}/>
         </div>
     </form>
   )
